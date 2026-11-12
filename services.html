@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Tshwaragano Pawnshop</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Inline search bar styling */
+        .search-container {
+            display: none;
+            align-items: center;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 2px 8px;
+            margin-left: 10px;
+        }
+        .search-container.active {
+            display: inline-flex;
+        }
+        .search-container input {
+            border: none;
+            outline: none;
+            padding: 5px;
+            font-size: 14px;
+            width: 150px;
+        }
+        /* Service card filtering and pop animation */
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        .service-card.hidden {
+            display: none;
+        }
+        .service-card.pop-in {
+            animation: popIn 0.3s ease forwards;
+        }
+        @keyframes popIn {
+            0% { transform: scale(0.95); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+
+    <a class="brand" href="index.html">
+        <img src="logo.png" width="110" height="120" alt="Tshwaragano Pawnshop Logo">
+        <span class="brand-subtitle"></span>
+    </a>
+
+    <!-- Mobile Menu Toggle Button -->
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle navigation">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+    </button>
+
+    <div class="nav-wrapper" id="primaryNav">
+    <nav class="main-nav">
+        <a class="search-nav-link" href="#" id="searchToggle" title="Search">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <span></span>
+        </a>
+        
+        <!-- Search Input Box that slides open -->
+        <div class="search-container" id="searchContainer">
+            <input type="text" id="pageSearchInput" placeholder="Search services..." autocomplete="off">
+        </div>
+          
+        <a href="index.html">Home</a>
+        <a class="active" href="services.html">Services</a>
+        <a href="how it works.html">How it works</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a class="login-nav-link" href="logIn.html">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            <span></span>
+        </a>
+    </nav>
+
+        <a class="value-button" href="ABT US.html">
+            Value my item
+        </a>
+    </div>
+
+</header>
+
+<main class="page-container">
+    <section class="page-heading">
+        <div class="hero-tag">
+            <span class="gold-dot"></span>
+            WHAT WE ACCEPT
+        </div>
+        <h1>Our Services</h1>
+        <p>
+            We offer instant cash loans and secure purchasing for a wide range of high-value assets. 
+            Explore the items you can pawn or sell with us below.
+        </p>
+    </section>
+
+    <div class="services-grid" id="servicesGrid">
+        <article class="service-card">
+            <div class="service-img-wrapper">
+                <img src="assets/vehicles.png" alt="A silver vehicle">
+            </div>
+            <h2>Vehicles</h2>
+            <p>Secure a fast cash loan using your vehicle as collateral.</p>
+        </article>
+
+        <article class="service-card">
+            <div class="service-img-wrapper">
+                <img src="assets/furniture og.png" alt="Household appliances and furniture items">
+            </div>
+            <h2>Furniture</h2>
+            <p>We pawn and buy quality household and office furniture.</p>
+        </article>
+
+        <article class="service-card">
+            <div class="service-img-wrapper">
+                <img src="assets/jewellery.jpg" alt="Gold jewellery and watches">
+            </div>
+            <h2>Jewellery</h2>
+            <p>We pawn and buy gold, diamonds, luxury watches, and fine pieces.</p>
+        </article>
+
+        <article class="service-card">
+            <div class="service-img-wrapper">
+                <img src="assets/electronics 2.png" alt="Computers and electronic devices">
+            </div>
+            <h2>Electronics</h2>
+            <p>Instant evaluations for phones, laptops, tablets, and high-end electronics.</p>
+        </article>
+
+        <article class="service-card">
+            <div class="service-img-wrapper">
+                <img src="assets/tools.png" alt="Power drill and tools">
+            </div>
+            <h2>Tools &amp; Equipment</h2>
+            <p>We pawn and buy professional power tools, industrial machines, and equipment.</p>
+        </article>
+
+        <a class="service-card learn-card" href="how it works.html">
+            <div class="learn-content">
+                <span>Learn</span>
+                <strong>Our Process &rarr;</strong>
+            </div>
+        </a>
+    </div>
+</main>
+
+<!-- Mobile Menu & Card Search Script -->
+<script>
+    const menuToggle = document.getElementById('menuToggle');
+    const primaryNav = document.getElementById('primaryNav');
+
+    menuToggle.addEventListener('click', () => {
+        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', !isExpanded);
+        menuToggle.classList.toggle('active');
+        primaryNav.classList.toggle('open');
+    });
+
+    // Service Card Search & Pop Logic
+    const searchToggle = document.getElementById('searchToggle');
+    const searchContainer = document.getElementById('searchContainer');
+    const pageSearchInput = document.getElementById('pageSearchInput');
+    const serviceCards = document.querySelectorAll('#servicesGrid .service-card');
+
+    searchToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        searchContainer.classList.toggle('active');
+        if (searchContainer.classList.contains('active')) {
+            pageSearchInput.focus();
+        } else {
+            pageSearchInput.value = '';
+            filterCards('');
+        }
+    });
+
+    pageSearchInput.addEventListener('input', function() {
+        const query = this.value.trim().toLowerCase();
+        filterCards(query);
+    });
+
+    function filterCards(query) {
+        serviceCards.forEach(card => {
+            const text = card.textContent.toLowerCase();
+            if (query === '' || text.includes(query)) {
+                card.classList.remove('hidden');
+                card.classList.add('pop-in');
+            } else {
+                card.classList.add('hidden');
+                card.classList.remove('pop-in');
+            }
+        });
+    }
+</script>
+
+ <footer class="site-footer">
+    <p>
+        <strong>TSHWARAGANO PAWNSHOP</strong><br>
+        Plot 125 Main Mall, Gaborone, Botswana
+    </p>
+
+    <nav class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="how it works.html">How it works</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+ </footer>
+
+</body>
+</html>

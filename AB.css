@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Tshwaragano Pawnshop</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <a class="brand" href="index.html">
+        <img src="logo.png" alt="Tshwaragano Pawnshop Logo" width="130" height="65">
+    </a>
+
+    <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="how-it-works.html">How it works</a>
+        <a class="active" href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+        <a class="value-button" href="mailto:tshwaraganopawnshop@gmail.com">
+            <span>Value My Item</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        
+        <a class="login-link" href="login.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            <span>Log In</span>
+        </a>
+    </div>
+</header>
+
+<main class="page-container">
+    <section class="page-heading">
+        <div class="hero-tag">
+            <span class="gold-dot"></span>
+            ABOUT OUR ESTABLISHMENT
+        </div>
+        <h1>About Us</h1>
+        <p>
+            Get to know more about Tshwaragano Pawnshop 
+            and the trusted services we provide.
+        </p>
+    </section>
+
+    <section class="about-layout">
+        <div class="about-copy">
+            <h2>Who We Are</h2>
+
+            <p>
+                Tshwaragano Pawnshop is located at Plot 125
+                Main Mall in Gaborone, Botswana.
+            </p>
+
+            <p>
+                We offer pawnshop services involving different
+                types of items, including vehicles, household
+                furniture, jewellery, electronics, tools and
+                equipment.
+            </p>
+
+            <p>
+                Our services allow customers to enquire about
+                pawning or selling their valuable items.
+                Customers can contact us for more information
+                about our services and the process involved.
+            </p>
+
+            <div class="about-highlight">
+                <strong>Our Location</strong><br>
+                Plot 125 Main Mall<br>
+                Gaborone, Botswana
+            </div>
+
+            <div class="about-actions">
+                <a href="services.html" class="button primary">
+                    View Our Services
+                </a>
+            </div>
+        </div>
+
+        <div class="about-image-container">
+            <img class="about-image" src="assets/contact-banner.png" alt="Tshwaragano Pawnshop Storefront">
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <p>
+            <strong>TSHWARAGANO PAWNSHOP</strong><br>
+            Plot 125 Main Mall, Gaborone, Botswana
+        </p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="how-it-works.html">How it works</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
